@@ -7,11 +7,28 @@
 </ol>
 </div>
 <div class="panel-body">
-  <input
-    type="text"
-    class="form_control"
-    [(ngModel)] = "username">
-  <p>
-    {{ username }}
-  </p>
+<table class="table_1">
+<tr>
+  <th>&nbsp;</th>
+  <th>
+    <input
+      type="text"
+      class="form_control"
+      [(ngModel)] = "username">
+  </th>
+  <th>&nbsp;</th>
+  <th>
+    <button
+      class="btn btn-primary"
+      [disabled] = "checkUsername()"
+      (click) = "onReset()">Reset</button>
+  </th>
+</tr>
+<tr>
+  <th>&nbsp;</th>
+  <th>
+    <p>{{ username }}</p>
+  </th>
+</tr>
+</table>
 </div>
