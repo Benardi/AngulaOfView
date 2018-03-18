@@ -8,8 +8,9 @@ import { Component, EventEmitter, Output, ElementRef } from '@angular/core';
 
 export class GameControlComponent {
 
-  @Output() counter = new EventEmitter<{time: number}>();
+  @Output() timePassed = new EventEmitter<{currentTime: number}>();
   time: number;
+  ref: any;
 
   constructor(){
     this.time = 0;
@@ -17,19 +18,20 @@ export class GameControlComponent {
 
   onStartGame(){
 
-    setInterval(() => {
+    this.ref = setInterval(() => {
 
-      this.counter.emit({
-        time: this.time
+      this.timePassed.emit({
+        currentTime: this.time
       });
       this.time += 1;
-      console.log(this.time);
 
     }, 1000);
 
   }
 
-
+  onStopGame(){
+    clearInterval(this.ref);
+  }
 
 
 }
