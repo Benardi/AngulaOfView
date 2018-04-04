@@ -33,11 +33,20 @@
         </div>
         <div class="form-group">
           <label for="projectStatus">Project Status</label>
-          <input
+          <select
             id="projectStatus"
-            type="text"
             class="form-control"
+            [value]="'stable'"
             formControlName="projectStatus">
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+          <!--<input-->
+            <!--id="projectStatus"-->
+            <!--type="text"-->
+            <!--class="form-control"-->
+            <!--formControlName="projectStatus">-->
         </div>
         <button class="btn btn-default" type="submit">Submit</button>
       </form>
